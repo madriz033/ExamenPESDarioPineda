@@ -3,21 +3,21 @@ package es.curso.model.Entity;
 public class Tarjeta {
 	
 	private int id;
-	private String numero;
+	private int numero;
 	private int cupoMaximo;
 	private int saldoDisponible;
 	private String tipo;
 	private int numComprobacion;
-	private String contrasenha;
+	private int contrasenha;
 	private boolean bloqueada; 
 	
 	
 	public Tarjeta() {
 		super();
 	}
-	public Tarjeta (int id, String numero, int cupoMaximo, 
+	public Tarjeta (int id, int numero, int cupoMaximo, 
 			int saldoDisponible, String tipo, int numComprobacion, 
-			String contrasenha, Boolean bloqueada) {
+			int contrasenha, Boolean bloqueada) {
 		super();
 		this.id = id;
 		this.numero = numero;
@@ -36,10 +36,10 @@ public class Tarjeta {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getNumero() {
+	public int getNumero() {
 		return numero;
 	}
-	public void setNumero(String numero) {
+	public void setNumero(int numero) {
 		this.numero = numero;
 	}
 	public int getCupoMaximo() {
@@ -66,10 +66,10 @@ public class Tarjeta {
 	public void setNumComprobacion(int numComprobacion) {
 		this.numComprobacion = numComprobacion;
 	}
-	public String getContrasenha() {
+	public int getContrasenha() {
 		return contrasenha;
 	}
-	public void setContrasenha(String contrasenha) {
+	public void setContrasenha(int contrasenha) {
 		this.contrasenha = contrasenha;
 	}
 	public boolean isBloqueada() {
@@ -92,60 +92,9 @@ public class Tarjeta {
 	
 	
 	
-	// hash and equals
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (bloqueada ? 1231 : 1237);
-		result = prime * result
-				+ ((contrasenha == null) ? 0 : contrasenha.hashCode());
-		result = prime * result + saldoDisponible;
-		result = prime * result + cupoMaximo;
-		result = prime * result + id;
-		result = prime * result + numComprobacion;
-		result = prime * result + ((numero == null) ? 0 : numero.hashCode());
-		result = prime * result + ((tipo == null) ? 0 : tipo.hashCode());
-		return result;
-	}
+
 	
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Tarjeta other = (Tarjeta) obj;
-		if (bloqueada != other.bloqueada)
-			return false;
-		if (contrasenha == null) {
-			if (other.contrasenha != null)
-				return false;
-		} else if (!contrasenha.equals(other.contrasenha))
-			return false;
-		if (saldoDisponible != other.saldoDisponible)
-			return false;
-		if (cupoMaximo != other.cupoMaximo)
-			return false;
-		if (id != other.id)
-			return false;
-		if (numComprobacion != other.numComprobacion)
-			return false;
-		if (numero == null) {
-			if (other.numero != null)
-				return false;
-		} else if (!numero.equals(other.numero))
-			return false;
-		if (tipo == null) {
-			if (other.tipo != null)
-				return false;
-		} else if (!tipo.equals(other.tipo))
-			return false;
-		return true;
-	}
-	
+
 	
 	
 	

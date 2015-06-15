@@ -4,12 +4,12 @@
 <!--  header.jsp -->
 <%@ include file="../template/header.jsp" %>
 
-    <form action="/ExamenPESRaquelOrtega/Banco/altaTarjeta" method="post" enctype="text/html"> 
+    <form action="/ExamenPESDarioPineda/Banco/altaTarjeta" method="post" enctype="text/html"> 
   <fieldset>
   <legend style="font-size: 1.3em">ALTA TARJETA BANCARIA</legend>
   
     <div class="cuadro">
-      <input type="hidden"  id="id" name="id" />
+      <input type="hidden"  id="id" name="id" value="0" />
     </div>
     
     <div class="texto">
@@ -58,7 +58,8 @@
       <label>BLOQUEADA</label>
     </div>
     <div class="cuadro">
-      <input type="boolean"  id="bloqueada" name="bloqueada" />
+      <input type="radio"  id="bloqueada" name="bloqueada" value="si"/><label>SÍ</label>
+      <input type="radio"  id="bloqueada" name="bloqueada" value="no"/><label>NO</label>
     </div>    
     
     </fieldset>

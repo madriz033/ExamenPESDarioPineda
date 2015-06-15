@@ -31,12 +31,12 @@ public class TarjetaDaoJdbc implements TarjetaDao{
 				cx.prepareStatement	("INSERT INTO tarjetacredito VALUES (?,?,?,?,?,?,?,?)");
 				// 2.1 Insertar los datos de cliente en los ?
 				ps.setInt(1, 0); // el id lo genera la base de datos automaticamente, ponemos 0 por poner algo
-				ps.setString(2, tarjeta.getNumero()); // nombre es Varchar en SQL, String para Java
+				ps.setInt(2, tarjeta.getNumero()); // nombre es Varchar en SQL, String para Java
 				ps.setInt(3, tarjeta.getCupoMaximo()); 
 				ps.setInt(4, tarjeta.getSaldoDisponible()); 
 				ps.setString(5, tarjeta.getTipo()); 
 				ps.setInt(6, tarjeta.getNumComprobacion());
-				ps.setString(7, tarjeta.getContrasenha()); 
+				ps.setInt(7, tarjeta.getContrasenha()); 
 				ps.setBoolean(8, tarjeta.isBloqueada()); 
 				
 				
@@ -87,12 +87,12 @@ public class TarjetaDaoJdbc implements TarjetaDao{
 				Tarjeta tarjetaTemporal = new Tarjeta();
 				// codigo para traspasar de la consulta(resultSet) hacia el clienteTemporal
 				tarjetaTemporal.setId(consulta.getInt("id"));// lo que esta entre comillas es el nombre del atributo de la base de datos
-				tarjetaTemporal.setNumero(consulta.getString("numero"));
+				tarjetaTemporal.setNumero(consulta.getInt("numero"));
 				tarjetaTemporal.setCupoMaximo(consulta.getInt("cupoMaximo"));
 				tarjetaTemporal.setSaldoDisponible(consulta.getInt("saldoDisponible"));
 				tarjetaTemporal.setTipo(consulta.getString("tipo"));
 				tarjetaTemporal.setNumComprobacion(consulta.getInt("numComprobacion"));
-				tarjetaTemporal.setContrasenha(consulta.getString("contrasenha"));
+				tarjetaTemporal.setContrasenha(consulta.getInt("contrasenha"));
 				tarjetaTemporal.setBloqueada(consulta.getBoolean("bloqueada"));
 				
 				tarjetas.add(tarjetaTemporal);
@@ -118,8 +118,8 @@ public class TarjetaDaoJdbc implements TarjetaDao{
 		// 2. establecer conexion	
 			cx= DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/banco", // localizacion de base de datos
-					"root", // usuario
-					"root" // contraseña
+					"rootTienda", // usuario
+					"rootTienda" // contraseña
 					);
 		// 3. Iniciar el autoCommit en false
 			cx.setAutoCommit(false);

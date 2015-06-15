@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <div>
-<footer>BANCO DARIO PINEDAs</footer>
+<footer>BANCO DARIO PINEDA</footer>
 
 </div>
 
