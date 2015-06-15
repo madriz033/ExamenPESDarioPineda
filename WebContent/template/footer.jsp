@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <div>
-<footer>BANCO TEROBAN: Ronda de Segovia, 34 Madrid www.teroban.com</footer>
+<footer>BANCO DARIO PINEDAs</footer>
 
 </div>
 

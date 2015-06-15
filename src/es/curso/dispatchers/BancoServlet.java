@@ -67,17 +67,17 @@ public class BancoServlet extends HttpServlet {
 		
 		switch(action){
 			case "altaTarjeta": // recuperar los datos tecleados en formulario
-				Integer id = request.getParameter("id");
+				String id = request.getParameter("id");
 				String numero = request.getParameter("numero");
-				Integer cupoMaximo = request.getParameter("cupoMaximo");
-				Integer saldoDisponible = request.getParameter("saldoDisponible");
+				String cupoMaximo = request.getParameter("cupoMaximo");
+				String saldoDisponible = request.getParameter("saldoDisponible");
 				String tipo = request.getParameter("tipo");
-				Integer numComprobacion = request.getParameter("numComprobacion");
+				String numComprobacion = request.getParameter("numComprobacion");
 				String contrasenha = request.getParameter("contrasenha");
-				Boolean bloqueada = request.getParameter("bloqueada");
+				String bloqueada = request.getParameter("bloqueada");
 				
 				Tarjeta tarjeta = new Tarjeta 
-						(0, numero, cupoMaximo, saldoDisponible, tipo, numComprobacion, contrasenha, bloqueada);
+						();
 				
 				// se invocara al controlador adecuado
 				DarAltaTarjetaControllerEjb controlador= new DarAltaTarjetaControllerEjb();

@@ -4,7 +4,7 @@
 
 <!--  header.jsp -->
 <%@ include file="template/header.jsp" %>
-<h1>BANCO TEROBAN</h1>
+<h1>BANCO</h1>
 
 <!--  footer.jsp -->
 <%@ include file="template/footer.jsp" %>
