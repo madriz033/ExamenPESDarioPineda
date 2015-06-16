@@ -38,18 +38,6 @@
              <td><input type="text" name="contrasenha" value="<%= t.getContrasenha() %>"/></td>
              <td><input type="text" name="bloqueada" value="<%= t.isBloqueada()==true ?"SI":"NO"%>"/></td>
              
-               
-            <!--  EDITAR REGISTROS 
-               <td><input class="btnSinBordes" 
-                   type="submit" value="Eliminar"
-                     name="btn<%= t.getId()%>" onclick="enviar(this);"/> 
-               </td>
-               <td><input class="btnSinBordes" 
-                   type="submit" value="Actualizar"
-                     name="btn<%= t.getId()%>" onclick="enviar(this);"/> 
-               </td>
-             -->  
-              
           </tr>
     	 </form>
     	 

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import es.curso.controllers.ejb.DarAltaTarjetaControllerEjb;
+import es.curso.controllers.ejb.ListarTodosControllerEjb;
 import es.curso.model.Entity.Tarjeta;
 
 /**
@@ -21,16 +22,11 @@ import es.curso.model.Entity.Tarjeta;
 public class BancoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    /**
-     * Default constructor. 
-     */
+  
     public BancoServlet() {
         
     }
 
-	/**
-	 * @see Servlet#init(ServletConfig)
-	 */
 	public void init(ServletConfig config) throws ServletException {
 		
 	}
@@ -52,7 +48,16 @@ public class BancoServlet extends HttpServlet {
 				rd= request.getRequestDispatcher("/jsp/altaTarjeta.jsp");
 				rd.forward(request, response);
 				break;
-		
+				
+				
+			case "ListarTodos":ListarTodosControllerEjb todos = new ListarTodosControllerEjb();
+				ArrayList<Tarjeta> tarjetas = todos.ListarTodos();
+				request.setAttribute("tarjetas", tarjetas);
+				titulo="Listado general de Tarjetas bancarias";
+				request.setAttribute("titulo", titulo);
+				rd = request.getRequestDispatcher("/jsp/listarTodos.jsp");
+				rd.forward(request, response);			
+				break;
 			
 		}	
 	}
@@ -87,6 +92,7 @@ public class BancoServlet extends HttpServlet {
 				rd.forward(request, response);
 				break;
 				
+			
 			
 				
 		}

@@ -12,7 +12,7 @@
     <nav>
     <ul>
         <li><a href="${pageContext.request.contextPath}/Banco/altaTarjeta">Alta Tarjeta</a></li>
-        <li><a href="${pageContext.request.contextPath}/Banco/listarTodos">Listar todos</a></li>
+        <li><a href="${pageContext.request.contextPath}/Banco/ListarTodos">Listar todos</a></li>
      
     </ul>
     </nav>
